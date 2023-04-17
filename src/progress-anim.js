@@ -73,7 +73,7 @@ class ProgressAnim extends LitElement {
       </main>
 
       <p class="app-footer">
-        🚽 Made with love by
+        🚽 Made with love by BRUHHHH
         <a
           target="_blank"
           rel="noopener noreferrer"
