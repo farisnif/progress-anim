@@ -93,7 +93,8 @@ export class ProgressAnim extends LitElement {
 
   constructor() {
     super();
-    this.version = 'STARTING';
+    this.barTitle = "Rspack";
+    this.numberValue = "50000";
   }
 
   render() {
@@ -108,7 +109,7 @@ export class ProgressAnim extends LitElement {
       </div>
 
       <div class="progressArea">
-        <div class="barTitle">Rspack</div>
+        <div class="barTitle">${this.barTitle}</div>
       <div class="surroundingBar">
         <div class="progress"></div>
         <div class="timer"></div>
@@ -117,7 +118,7 @@ export class ProgressAnim extends LitElement {
 
       <div class="moduleCount">
         <div class="moduleCountDefn">Module Count: </div>
-        <div class="moduleCountNumber">50000</div>
+        <div class="moduleCountNumber">${this.numberValue}</div>
       </div>
     `;
   }
