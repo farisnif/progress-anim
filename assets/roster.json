@@ -1,0 +1,26 @@
+[
+    {
+        "barTitle": "Rspack",
+        "numberValue": "50000",
+        "introTitle": "Blazing fast build speed",
+        "description": "Combining TypeScript and Rust with a parrelized architecture to bring you the ultimate developer experience.",
+        "timeLength": "5.79",
+        "barWidth": 0.075
+    },
+    {
+        "barTitle": "Rspack",
+        "numberValue": "50000",
+        "introTitle": "Blazing fast build speed",
+        "description": "Combining TypeScript and Rust with a parrelized architecture to bring you the ultimate developer experience.",
+        "timeLength": "10",
+        "barWidth": 0.075
+    },
+    {
+        "barTitle": "Rspack",
+        "numberValue": "50000",
+        "introTitle": "Blazing fast build speed",
+        "description": "Combining TypeScript and Rust with a parrelized architecture to bring you the ultimate developer experience.",
+        "timeLength": "15",
+        "barWidth": 0.075
+    }
+]
