@@ -12,7 +12,6 @@ export class ProgressAnim extends LitElement {
       height: var(--progress-anim-bar-height, 50px);
       border-radius: var(--progress-anim-bar-radius, 6px);
       direction: rtl;
-      margin-left: 20%;
     }
 
     .timer {
@@ -53,14 +52,41 @@ export class ProgressAnim extends LitElement {
 
     .surroundingBar {
       margin-top: 50px;
-      padding: 2px;
-      border: 1px solid #c6c5c9;
-      border-radius: 10px;
-      width: 80%;
+    padding: 2px;
+    border: 1px solid #c6c5c9;
+    border-radius: 10px;
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    }
+
+    .moduleCount {
+      font-size: 20px;
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .moduleCountDefn {
+      margin-right: 2px;
+      font-weight: var(--progress-anim-module-defn-boldness, lighter);
+      color: var(--progress-anim-module-count-defn-font-color, grey);
+    }
+    .moduleCountNumber {
+      font-weight: var(--progress-anim-module-count-number-boldness, bold);
+      color: var(--progress-anim-module-count-number-font-color, #535353);
+    }
+    .progressArea {
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
+    .barTitle {
+      
+    }
+
     `;
   }
 
@@ -81,9 +107,17 @@ export class ProgressAnim extends LitElement {
         <div class="textDescription">Combining TypeScript and Rust with a parrelized architecture to bring you the ultimate developer experience.</div>
       </div>
 
+      <div class="progressArea">
+        <div class="barTitle">Rspack</div>
       <div class="surroundingBar">
         <div class="progress"></div>
         <div class="timer"></div>
+      </div>
+  </div>
+
+      <div class="moduleCount">
+        <div class="moduleCountDefn">Module Count: </div>
+        <div class="moduleCountNumber">50000</div>
       </div>
     `;
   }
