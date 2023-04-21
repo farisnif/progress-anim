@@ -122,7 +122,7 @@ export class ProgressAnim extends IntersectionObserverMixin(LitElement) {
       color: grey;
     }
 
-    @media (max-width: 500px) {
+    @media (max-width: 770px) {
     #progress {
       height: 16px;
       border-radius: 2px;
