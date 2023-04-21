@@ -14,16 +14,6 @@ export class AppsRoster extends LitElement {
 
     constructor() {
         super();
-        // this.types = [
-        //     {
-        //         "barTitle": "Rspack",
-        //         "numberValue": "50000",
-        //         "introTitle": "Blazing fast build speed",
-        //         "description": "Combining TypeScript and Rust with a parrelized architecture to bring you the ultimate developer experience.",
-        //         "timeLength": "5.79",
-        //         "barWidth": 0.075
-        //     }
-        // ];
         this.types = []
         this.apps = 'Software';
         this.updateRoster();

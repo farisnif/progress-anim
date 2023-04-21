@@ -129,7 +129,7 @@ export class ProgressAnim extends IntersectionObserverMixin(LitElement) {
     this.barTitle = "Rspack";
     this.numberValue = "50000";
     this.introTitle = "Blazing fast build speed";
-    this.description = "Combining TypeScript and Rust with a parrelized architecture to bring you the ultimate developer experience.";
+    this.description = "Combining TypeScript and Rust with a parallelized architecture to bring you the ultimate developer experience.";
     this.timeLength = 5.79;
     this.barWidth = 0.075;
   }
@@ -182,16 +182,19 @@ export class ProgressAnim extends IntersectionObserverMixin(LitElement) {
     });
   }
 
+
+
   render() {
     return html`
     
-    <div class="bruh1">Curry for 3</div>
+    <!-- FILLER TEXT TO TEST SCROLL FUNCTION -->
+    <!-- <div class="bruh1">Curry for 3</div>
     <div class="bruh2">LeBron for 3</div>
 
     <div class="subfiller">
       <div class="speedText">${this.introTitle}</div>
       <div class="textDescription">${this.description}</div>
-    </div>
+    </div> -->
 
     <div class="progressArea">
       <div class="barTitle">${this.barTitle}</div>
@@ -199,6 +202,8 @@ export class ProgressAnim extends IntersectionObserverMixin(LitElement) {
       <div id="progress"></div>
       <div id="timer"></div>
     </div>
+    
+
 </div>
 
     <div class="moduleCount">
