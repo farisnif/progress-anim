@@ -48,6 +48,7 @@ export class ProgressAnim extends IntersectionObserverMixin(LitElement) {
     }
 
     #timer {
+      font-family: "Lucida Console", "Courier New", monospace;
       padding-right: 10px;
       margin-left: auto;
     }
@@ -85,7 +86,7 @@ export class ProgressAnim extends IntersectionObserverMixin(LitElement) {
 
     .surroundingBar {
       margin-top: 50px;
-      padding: 2px;
+      padding: 4px;
       border: 1px solid #c6c5c9;
       border-radius: 10px;
       width: 50%;
@@ -117,11 +118,42 @@ export class ProgressAnim extends IntersectionObserverMixin(LitElement) {
       align-items: center;
     }
     .barTitle {
-      
+      font-size: 16px;
+      color: grey;
     }
 
+    @media (max-width: 500px) {
+    #progress {
+      height: 16px;
+      border-radius: 2px;
+    }
+
+    #timer {
+      font-size: 8px;
+      padding-right: 2px;
+    }
+
+    .surroundingBar {
+      border-radius: 4px;
+      padding: 2px;
+    }
+
+    .moduleCount {
+      font-size: 10px;
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .barTitle {
+      font-size: 10px;
+      color: grey;
+    }
     `;
   }
+
+
 
 
   constructor() {
