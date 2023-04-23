@@ -45,6 +45,8 @@ export class ProgressAnim extends IntersectionObserverMixin(LitElement) {
       height: var(--progress-anim-bar-height, 50px);
       border-radius: var(--progress-anim-bar-radius, 6px);
       direction: rtl;
+      position: absolute;
+      z-index: 1;
     }
 
     #timer {
@@ -122,6 +124,14 @@ export class ProgressAnim extends IntersectionObserverMixin(LitElement) {
       color: grey;
     }
 
+    .greyBar {
+      position: relative;
+      width: 30%;
+      height: 50px;
+      background-color: #ccc; /* Grey color */
+      border-radius: 6px;
+    }
+
     @media (max-width: 770px) {
     #progress {
       height: 16px;
@@ -150,6 +160,15 @@ export class ProgressAnim extends IntersectionObserverMixin(LitElement) {
       font-size: 10px;
       color: grey;
     }
+
+    .greyBar {
+      position: relative;
+      width: 30%;
+      height: 16px;
+      background-color: #ccc; /* Grey color */
+      border-top-left-radius: 0;
+      border-radius: 2px;
+    }
     `;
   }
 
@@ -169,12 +188,16 @@ export class ProgressAnim extends IntersectionObserverMixin(LitElement) {
   progressAnim(timeLength, barWidth) {
     var progressBar = this.shadowRoot.querySelector("#progress");
     var timer = this.shadowRoot.querySelector("#timer");
+    /* var greyBar = this.shadowRoot.querySelector("greyBar"); */
+
     function startTimer(timeLength, barWidth, progressBar, timer) {
       var totalSeconds = timeLength;
       var documentWidth =
         document.documentElement.clientWidth * barWidth;
       var start = Date.now();
       var intervalSetted = null;
+      /* const progressBarWidth = progressBar.offsetWidth; */
+
 
       function updateTimer() {
         var diff = (Date.now() - start) / 1000;
@@ -187,6 +210,9 @@ export class ProgressAnim extends IntersectionObserverMixin(LitElement) {
         var tenths = Math.floor((diff % 1) * 100);
         var progressBarWidth = (diff / timeLength) * documentWidth;
         progressBar.style.width = progressBarWidth + "px";
+        /* greyBar.style.width = progressBarWidth + "px"; */
+
+
         timer.innerHTML =
           seconds + "." + (tenths < 10 ? "0" + tenths : tenths) + "s";
       }
@@ -220,22 +246,21 @@ export class ProgressAnim extends IntersectionObserverMixin(LitElement) {
     return html`
     
     <!-- FILLER TEXT TO TEST SCROLL FUNCTION -->
-    <div class="bruh1">Curry for 3</div>
+    <!-- <div class="bruh1">Curry for 3</div>
     <div class="bruh2">LeBron for 3</div>
 
     <div class="subfiller">
       <div class="speedText">${this.introTitle}</div>
       <div class="textDescription">${this.description}</div>
-    </div>
+    </div> -->
 
     <div class="progressArea">
       <div class="barTitle">${this.barTitle}</div>
     <div class="surroundingBar">
       <div id="progress"></div>
+      <div class="greyBar"></div>
       <div id="timer"></div>
     </div>
-    
-
 </div>
 
     <div class="moduleCount">
