@@ -246,13 +246,13 @@ export class ProgressAnim extends IntersectionObserverMixin(LitElement) {
     return html`
     
     <!-- FILLER TEXT TO TEST SCROLL FUNCTION -->
-    <!-- <div class="bruh1">Curry for 3</div>
+    <div class="bruh1">Curry for 3</div>
     <div class="bruh2">LeBron for 3</div>
 
     <div class="subfiller">
       <div class="speedText">${this.introTitle}</div>
       <div class="textDescription">${this.description}</div>
-    </div> -->
+    </div>
 
     <div class="progressArea">
       <div class="barTitle">${this.barTitle}</div>
