@@ -49,11 +49,19 @@ export class ProgressAnim extends IntersectionObserverMixin(LitElement) {
       z-index: 1;
     }
 
+    /* #progress:focus {
+      outline: 2px solid black;
+    } */
+
     #timer {
       font-family: "Lucida Console", "Courier New", monospace;
       padding-right: 10px;
       margin-left: auto;
     }
+
+    /* #timer:focus {
+      outline: 2px solid black;
+    } */
 
     .bruh1 {
       margin: 0 auto;
@@ -61,6 +69,11 @@ export class ProgressAnim extends IntersectionObserverMixin(LitElement) {
       padding-bottom: 400px;
       border-radius: 20px;
       background-color: var(--progress-anim-bruh1-color, #687dcb);
+      width: 80%;
+    }
+
+    .bruh1:hover {
+      outline: 2px solid black;
     }
     
     .bruh2 {
@@ -71,8 +84,28 @@ export class ProgressAnim extends IntersectionObserverMixin(LitElement) {
       padding-bottom: 400px;
       border-radius: 20px;
       background-color: var(--progress-anim-bruh2-color, orange);
+      width: 80%;
     }
 
+    .bruh2:hover {
+      outline: 2px solid black;
+    }
+
+    .bruh3 {
+      margin: 0 auto;
+      margin-top: 30px;
+      padding: 20px;
+      padding-top: 30px;
+      padding-bottom: 400px;
+      border-radius: 20px;
+      background-color: var(--progress-anim-bruh2-color, violet);
+      width: 80%;
+    }
+
+    .bruh3:hover {
+      outline: 2px solid black;
+    }
+    
     .speedText {
       margin-top: var(--progress-anim-header-padding-top, 20px);
       font-size: var(--progress-anim-header-size, 40px);
@@ -81,7 +114,8 @@ export class ProgressAnim extends IntersectionObserverMixin(LitElement) {
     }
 
     .textDescription {
-      margin-top: var(--progress-anim-description-padding-top, 20px);
+      margin-top: var(--progress-anim-description-margin-top, 20px);
+      margin-bottom: var(--progress-anim-description-margin-bottom, 20px);
       font-size: var(--progress-anim-description-font-size, 18px);
       text-align: center;
     }
@@ -132,7 +166,7 @@ export class ProgressAnim extends IntersectionObserverMixin(LitElement) {
       border-radius: 6px;
     }
 
-    @media (max-width: 770px) {
+    @media (max-width: 700px) {
     #progress {
       height: 16px;
       border-radius: 2px;
@@ -159,6 +193,8 @@ export class ProgressAnim extends IntersectionObserverMixin(LitElement) {
     .barTitle {
       font-size: 10px;
       color: grey;
+      position: relative;
+      text-align: center;
     }
 
     .greyBar {
@@ -169,6 +205,26 @@ export class ProgressAnim extends IntersectionObserverMixin(LitElement) {
       border-top-left-radius: 0;
       border-radius: 2px;
     }
+
+    .moduleCount {
+      font-size: 20px;
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .moduleCountDefn {
+      margin-right: 2px;
+      font-weight: var(--progress-anim-module-defn-boldness, lighter);
+      color: var(--progress-anim-module-count-defn-font-color, grey);
+    }
+
+    .moduleCountNumber {
+      font-weight: var(--progress-anim-module-count-number-boldness, bold);
+      color: var(--progress-anim-module-count-number-font-color, #535353);
+    }
+
     `;
   }
 
@@ -240,14 +296,13 @@ export class ProgressAnim extends IntersectionObserverMixin(LitElement) {
     });
   }
 
-
-
   render() {
     return html`
     
     <!-- FILLER TEXT TO TEST SCROLL FUNCTION -->
     <div class="bruh1">Curry for 3</div>
     <div class="bruh2">LeBron for 3</div>
+    <div class="bruh3">Joel Hans Embiid</div>
 
     <div class="subfiller">
       <div class="speedText">${this.introTitle}</div>
