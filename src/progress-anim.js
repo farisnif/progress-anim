@@ -138,12 +138,12 @@ export class ProgressAnim extends IntersectionObserverMixin(LitElement) {
       border-radius: 6px;
     }
 
-    /* @media (prefers-reduced-motion: reduce) {
+    @media (prefers-reduced-motion: reduce) {
     * {
         animation: none !important;
         transition-duration: 0s !important;
       }
-    } */
+    }
 
     @media (max-width: 700px) {
     #progress {
