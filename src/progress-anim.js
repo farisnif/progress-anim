@@ -59,10 +59,6 @@ export class ProgressAnim extends IntersectionObserverMixin(LitElement) {
       margin-left: auto;
     }
 
-    /* #timer:focus {
-      outline: 2px solid black;
-    } */
-
     #bruh {
       margin: 0 auto;
       padding: 20px;
@@ -110,36 +106,48 @@ export class ProgressAnim extends IntersectionObserverMixin(LitElement) {
       align-items: center;
       justify-content: center;
     }
+
     .moduleCountDefn {
       margin-right: 2px;
       font-weight: var(--progress-anim-module-defn-boldness, lighter);
       color: var(--progress-anim-module-count-defn-font-color, grey);
     }
+
     .moduleCountNumber {
       font-weight: var(--progress-anim-module-count-number-boldness, bold);
       color: var(--progress-anim-module-count-number-font-color, #535353);
     }
+
     .progressArea {
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
+
     .barTitle {
       font-size: 16px;
       color: grey;
+      padding-left: 90px; //DONT KNOW AB THIS
     }
 
     .greyBar {
       position: relative;
       width: 30%;
       height: 50px;
-      background-color: #ccc; /* Grey color */
+      background-color: #ccc;
       border-radius: 6px;
     }
 
+    /* @media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition-duration: 0s !important;
+      }
+    } */
+
     @media (max-width: 700px) {
     #progress {
-      height: 16px;
+      height: 28px;
       border-radius: 2px;
     }
 
@@ -151,6 +159,7 @@ export class ProgressAnim extends IntersectionObserverMixin(LitElement) {
     .surroundingBar {
       border-radius: 4px;
       padding: 2px;
+      height: 28px;
     }
 
     .moduleCount {
@@ -171,8 +180,8 @@ export class ProgressAnim extends IntersectionObserverMixin(LitElement) {
     .greyBar {
       position: relative;
       width: 30%;
-      height: 16px;
-      background-color: #ccc; /* Grey color */
+      height: 28px;
+      background-color: #ccc;
       border-top-left-radius: 0;
       border-radius: 2px;
     }
@@ -195,12 +204,8 @@ export class ProgressAnim extends IntersectionObserverMixin(LitElement) {
       font-weight: var(--progress-anim-module-count-number-boldness, bold);
       color: var(--progress-anim-module-count-number-font-color, #535353);
     }
-
     `;
   }
-
-
-
 
   constructor() {
     super();
