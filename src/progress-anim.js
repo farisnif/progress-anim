@@ -63,46 +63,17 @@ export class ProgressAnim extends IntersectionObserverMixin(LitElement) {
       outline: 2px solid black;
     } */
 
-    .bruh1 {
+    #bruh {
       margin: 0 auto;
       padding: 20px;
       padding-bottom: 400px;
+      margin-bottom: 20px;
       border-radius: 20px;
       background-color: var(--progress-anim-bruh1-color, #687dcb);
       width: 80%;
     }
 
-    .bruh1:hover {
-      outline: 2px solid black;
-    }
-    
-    .bruh2 {
-      margin: 0 auto;
-      margin-top: 30px;
-      padding: 20px;
-      padding-top: 30px;
-      padding-bottom: 400px;
-      border-radius: 20px;
-      background-color: var(--progress-anim-bruh2-color, orange);
-      width: 80%;
-    }
-
-    .bruh2:hover {
-      outline: 2px solid black;
-    }
-
-    .bruh3 {
-      margin: 0 auto;
-      margin-top: 30px;
-      padding: 20px;
-      padding-top: 30px;
-      padding-bottom: 400px;
-      border-radius: 20px;
-      background-color: var(--progress-anim-bruh2-color, violet);
-      width: 80%;
-    }
-
-    .bruh3:hover {
+    #bruh:hover {
       outline: 2px solid black;
     }
     
@@ -300,9 +271,10 @@ export class ProgressAnim extends IntersectionObserverMixin(LitElement) {
     return html`
     
     <!-- FILLER TEXT TO TEST SCROLL FUNCTION -->
-    <div class="bruh1">Curry for 3</div>
-    <div class="bruh2">LeBron for 3</div>
-    <div class="bruh3">Joel Hans Embiid</div>
+    <div id="bruh">Joel Hans Embiid</div>
+    <div id="bruh">Joel Hans Embiid</div>
+    <div id="bruh">Joel Hans Embiid</div>
+
 
     <div class="subfiller">
       <div class="speedText">${this.introTitle}</div>
