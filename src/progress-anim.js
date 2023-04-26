@@ -122,6 +122,7 @@ export class ProgressAnim extends IntersectionObserverMixin(LitElement) {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      padding-bottom: 16px;
     }
 
     .barTitle {
@@ -149,6 +150,13 @@ export class ProgressAnim extends IntersectionObserverMixin(LitElement) {
     #progress {
       height: 28px;
       border-radius: 2px;
+    }
+
+    .progressArea {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 12px;
     }
 
     #timer {
@@ -276,7 +284,7 @@ export class ProgressAnim extends IntersectionObserverMixin(LitElement) {
     return html`
     
     <!-- FILLER TEXT TO TEST SCROLL FUNCTION -->
-    <div id="bruh">Joel Hans Embiid</div>
+    <!-- <div id="bruh">Joel Hans Embiid</div>
     <div id="bruh">Joel Hans Embiid</div>
     <div id="bruh">Joel Hans Embiid</div>
 
@@ -284,7 +292,7 @@ export class ProgressAnim extends IntersectionObserverMixin(LitElement) {
     <div class="subfiller">
       <div class="speedText">${this.introTitle}</div>
       <div class="textDescription">${this.description}</div>
-    </div>
+    </div> -->
 
     <div class="progressArea">
       <div class="barTitle">${this.barTitle}</div>
@@ -295,10 +303,10 @@ export class ProgressAnim extends IntersectionObserverMixin(LitElement) {
     </div>
 </div>
 
-    <div class="moduleCount">
+    <!-- <div class="moduleCount">
       <div class="moduleCountDefn">Module Count: </div>
       <div class="moduleCountNumber">${this.numberValue}</div>
-    </div>
+    </div> -->
   `;
   }
 }
