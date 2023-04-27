@@ -18,6 +18,8 @@ export class AppsRoster extends LitElement {
     this.apps = 'Software';
     this.updateRoster();
     this.numberValue = "50000";
+    this.introTitle = "Blazing fast build speed";
+    this.description = "Combining TypeScript and Rust with a parallelized architecture to bring you the ultimate developer experience.";
   }
 
   static get styles() {
@@ -56,6 +58,20 @@ export class AppsRoster extends LitElement {
     .moduleCountNumber {
       font-weight: var(--progress-anim-module-count-number-boldness, bold);
       color: var(--progress-anim-module-count-number-font-color, #535353);
+    }
+
+    .textDescription {
+      margin-top: var(--progress-anim-description-margin-top, 20px);
+      margin-bottom: var(--progress-anim-description-margin-bottom, 20px);
+      font-size: var(--progress-anim-description-font-size, 18px);
+      text-align: center;
+    }
+
+    .speedText {
+      margin-top: var(--progress-anim-header-padding-top, 20px);
+      font-size: var(--progress-anim-header-size, 40px);
+      font-weight: bold;
+      text-align: center;
     }
 
         `;

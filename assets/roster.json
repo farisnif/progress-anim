@@ -4,17 +4,14 @@
         "numberValue": "50000",
         "introTitle": "Blazing fast build speed",
         "description": "Combining TypeScript and Rust with a parrelized architecture to bring you the ultimate developer experience.",
-        "timeLength": "3.79",
-        "barWidth": 0.045
+        "timeLength": "3.79"
     },
     {
-        "barTitle": "Rspack",
-        "timeLength": "31.25",
-        "barWidth": 0.30
+        "barTitle": "Webpack (with SWC)",
+        "timeLength": "31.25"
     },
     {
-        "barTitle": "Rspack",
-        "timeLength": "42.61",
-        "barWidth": 0.40
+        "barTitle": "Webpack (with babel)",
+        "timeLength": "42.61"
     }
 ]

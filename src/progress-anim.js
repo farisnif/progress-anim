@@ -223,9 +223,9 @@ export class ProgressAnim extends IntersectionObserverMixin(LitElement) {
   constructor() {
     super();
     this.barTitle = "Rspack";
-    this.numberValue = "50000";
+    /* this.numberValue = "50000";
     this.introTitle = "Blazing fast build speed";
-    this.description = "Combining TypeScript and Rust with a parallelized architecture to bring you the ultimate developer experience.";
+    this.description = "Combining TypeScript and Rust with a parallelized architecture to bring you the ultimate developer experience."; */
     this.timeLength = 5.79;
     this.maxTime = 60;
     this.barWidth = 0.075;
