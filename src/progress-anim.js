@@ -162,7 +162,7 @@ export class ProgressAnim extends IntersectionObserverMixin(LitElement) {
     #timer {
       font-size: 8px;
       padding-right: 2px;
-    }
+    }   
 
     .surroundingBar {
       border-radius: 4px;

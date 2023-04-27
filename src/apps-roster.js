@@ -2,25 +2,26 @@ import { LitElement, html, css } from 'lit';
 import "./progress-anim.js";
 
 export class AppsRoster extends LitElement {
-    static get tag() {
-        return 'apps-roster';
+  static get tag() {
+    return 'apps-roster';
+  }
+  static get properties() {
+    return {
+      types: { type: Array },
+      apps: { type: String },
     }
-    static get properties() {
-        return {
-            types: { type: Array },
-            apps: { type: String },
-        }
-    }
+  }
 
-    constructor() {
-        super();
-        this.types = []
-        this.apps = 'Software';
-        this.updateRoster();
-    }
+  constructor() {
+    super();
+    this.types = []
+    this.apps = 'Software';
+    this.updateRoster();
+    this.numberValue = "50000";
+  }
 
-    static get styles() {
-        return css`
+  static get styles() {
+    return css`
         /* BROUGHT THIS CSS OVER FROM PROGRESS-ANIM.js */
         #bruh {
       margin: 0 auto;
@@ -58,26 +59,26 @@ export class AppsRoster extends LitElement {
     }
 
         `;
-    }
+  }
 
 
-    updateRoster() {
-        const address = new URL('../assets/roster.json', import.meta.url).href;
-        fetch(address).then((response) => {
-            if (response.ok) {
-                return response.json()
-            }
-            return [];
-        })
-            .then((data) => {
-                this.types = data;
-            });
-    }
+  updateRoster() {
+    const address = new URL('../assets/roster.json', import.meta.url).href;
+    fetch(address).then((response) => {
+      if (response.ok) {
+        return response.json()
+      }
+      return [];
+    })
+      .then((data) => {
+        this.types = data;
+      });
+  }
 
 
 
-    render() {
-        return html`
+  render() {
+    return html`
         <div class="wrapper">
          <!-- DROPPED FROM PROGRESS-ANIM.js FILLER TEXT TO TEST SCROLL FUNCTION -->
         <div id="bruh">Joel Hans Embiid</div>
@@ -102,6 +103,6 @@ export class AppsRoster extends LitElement {
 
     </div>
     `;
-    }
+  }
 }
 customElements.define(AppsRoster.tag, AppsRoster);
