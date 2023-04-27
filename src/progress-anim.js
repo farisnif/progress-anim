@@ -258,7 +258,7 @@ export class ProgressAnim extends IntersectionObserverMixin(LitElement) {
       }
 
       updateTimer();
-      intervalSetted = setInterval(updateTimer, 10);
+      intervalSetted = setInterval(updateTimer, 100);
     }
     startTimer(timeLength, barWidth, progressBar, timer);
   }
