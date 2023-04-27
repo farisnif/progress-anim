@@ -46,7 +46,7 @@ export class ProgressAnim extends IntersectionObserverMixin(LitElement) {
       border-radius: var(--progress-anim-bar-radius, 6px);
       direction: rtl;
       position: absolute;
-      z-index: 1;
+      z-index: 5;
     }
 
     /* #progress:focus {
@@ -131,12 +131,13 @@ export class ProgressAnim extends IntersectionObserverMixin(LitElement) {
       padding-left: 90px; //DONT KNOW AB THIS
     }
 
-    .greyBar {
+    #greyBar {
       position: relative;
       width: 30%;
       height: 50px;
       background-color: #ccc;
       border-radius: 6px;
+      z-index: 2
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -150,6 +151,8 @@ export class ProgressAnim extends IntersectionObserverMixin(LitElement) {
     #progress {
       height: 28px;
       border-radius: 2px;
+      transition-width: 1s;
+      z-index: 5;
     }
 
     .progressArea {
@@ -185,13 +188,14 @@ export class ProgressAnim extends IntersectionObserverMixin(LitElement) {
       text-align: center;
     }
 
-    .greyBar {
+    #greyBar {
       position: relative;
       width: 30%;
       height: 28px;
       background-color: #ccc;
       border-top-left-radius: 0;
       border-radius: 2px;
+      z-index: 2;
     }
 
     .moduleCount {
@@ -215,6 +219,7 @@ export class ProgressAnim extends IntersectionObserverMixin(LitElement) {
     `;
   }
 
+
   constructor() {
     super();
     this.barTitle = "Rspack";
@@ -222,21 +227,26 @@ export class ProgressAnim extends IntersectionObserverMixin(LitElement) {
     this.introTitle = "Blazing fast build speed";
     this.description = "Combining TypeScript and Rust with a parallelized architecture to bring you the ultimate developer experience.";
     this.timeLength = 5.79;
+    this.maxTime = 60;
     this.barWidth = 0.075;
   }
 
-  progressAnim(timeLength, barWidth) {
+  progressAnim(timeLength, barWidth, maxTime) {
     var progressBar = this.shadowRoot.querySelector("#progress");
     var timer = this.shadowRoot.querySelector("#timer");
-    /* var greyBar = this.shadowRoot.querySelector("greyBar"); */
+    var greyBar = this.shadowRoot.querySelector("#greyBar");
 
-    function startTimer(timeLength, barWidth, progressBar, timer) {
+    function startTimer(timeLength, barWidth, progressBar, timer, maxTime) {
       var totalSeconds = timeLength;
       var documentWidth =
         document.documentElement.clientWidth * barWidth;
+      var surroundingBarWidth = document.documentElement.clientWidth * .5;
+
       var start = Date.now();
       var intervalSetted = null;
-      /* const progressBarWidth = progressBar.offsetWidth; */
+      const progressBarWidth = progressBar.offsetWidth;
+      var greyBarWidth = (timeLength / maxTime) * surroundingBarWidth;
+      greyBar.style.width = greyBarWidth + "px";
 
 
       function updateTimer() {
@@ -248,9 +258,9 @@ export class ProgressAnim extends IntersectionObserverMixin(LitElement) {
 
         var seconds = Math.floor(diff % 60);
         var tenths = Math.floor((diff % 1) * 100);
-        var progressBarWidth = (diff / timeLength) * documentWidth;
+        var progressBarWidth = (diff / maxTime) * surroundingBarWidth;
         progressBar.style.width = progressBarWidth + "px";
-        /* greyBar.style.width = progressBarWidth + "px"; */
+
 
 
         timer.innerHTML =
@@ -258,9 +268,10 @@ export class ProgressAnim extends IntersectionObserverMixin(LitElement) {
       }
 
       updateTimer();
-      intervalSetted = setInterval(updateTimer, 100);
+      intervalSetted = setInterval(updateTimer, 10);
     }
-    startTimer(timeLength, barWidth, progressBar, timer);
+
+    startTimer(timeLength, barWidth, progressBar, timer, maxTime);
   }
 
 
@@ -274,7 +285,7 @@ export class ProgressAnim extends IntersectionObserverMixin(LitElement) {
         console.log(this.elementVisible);
         clearTimeout(this._debounce);
         this._debounce = setTimeout(() => {
-          this.progressAnim(this.timeLength, this.barWidth);
+          this.progressAnim(this.timeLength, this.barWidth, this.maxTime);
         }, 10);
       }
     });
@@ -298,7 +309,7 @@ export class ProgressAnim extends IntersectionObserverMixin(LitElement) {
       <div class="barTitle">${this.barTitle}</div>
     <div class="surroundingBar">
       <div id="progress"></div>
-      <div class="greyBar"></div>
+      <div id="greyBar"></div>
       <div id="timer"></div>
     </div>
 </div>
