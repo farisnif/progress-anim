@@ -149,7 +149,7 @@ export class ProgressAnim extends IntersectionObserverMixin(LitElement) {
 
     @media (max-width: 700px) {
     #progress {
-      height: 20px; //was 28 testing vercel
+      height: 28px;
       border-radius: 2px;
       transition-width: 1s;
       z-index: 5;
@@ -191,7 +191,7 @@ export class ProgressAnim extends IntersectionObserverMixin(LitElement) {
     #greyBar {
       position: relative;
       width: 30%;
-      height: 20px;
+      height: 28px;
       background-color: #ccc;
       border-top-left-radius: 0;
       border-radius: 2px;
