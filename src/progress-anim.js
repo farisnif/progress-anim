@@ -170,7 +170,7 @@ export class ProgressAnim extends IntersectionObserverMixin(LitElement) {
     .surroundingBar {
       border-radius: 4px;
       padding: 2px;
-      height: 28px;
+      height: 20px;
     }
 
     .moduleCount {
