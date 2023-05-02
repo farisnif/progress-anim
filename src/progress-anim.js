@@ -126,10 +126,12 @@ export class ProgressAnim extends IntersectionObserverMixin(LitElement) {
     }
 
     .barTitle {
-      font-size: 16px;
-      color: grey;
-      padding-left: 90px; //DONT KNOW AB THIS
-    }
+    font-size: 16px;
+    color: grey;
+    position: absolute;
+    right: calc(100% - 10%);
+  }
+
 
     #greyBar {
       position: relative;
@@ -176,10 +178,10 @@ export class ProgressAnim extends IntersectionObserverMixin(LitElement) {
     }
 
     .barTitle {
-      font-size: 10px;
+      font-size: 12px;
       color: grey;
-      position: relative;
-      text-align: center;
+      position: absolute;
+      right: calc(77%);
     }
 
     #greyBar {
