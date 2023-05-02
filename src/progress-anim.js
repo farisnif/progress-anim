@@ -262,17 +262,21 @@ export class ProgressAnim extends IntersectionObserverMixin(LitElement) {
 
         timer.innerHTML =
           seconds + "." + (tenths < 10 ? "0" + tenths : tenths) + "s";
+
+        // Use requestAnimationFrame to update the timer
+        requestAnimationFrame(updateTimer);
       }
 
       // check if the user prefers reduced motion
       var prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
       // update the progress bar every 100 milliseconds for a smoother animation
-      intervalSetted = setInterval(updateTimer, prefersReducedMotion ? 2000 : 100);
+      intervalSetted = setInterval(updateTimer, prefersReducedMotion ? 2000 : 400);
     }
 
     startTimer(timeLength, barWidth, progressBar, timer, maxTime);
   }
+
 
 
 
