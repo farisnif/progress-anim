@@ -72,7 +72,11 @@ export class AppsRoster extends LitElement {
       font-size: var(--progress-anim-header-size, 40px);
       font-weight: bold;
       text-align: center;
+      background: linear-gradient(to right, green, orange);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
+
 
         `;
   }
