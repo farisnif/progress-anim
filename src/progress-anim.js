@@ -238,16 +238,14 @@ export class ProgressAnim extends IntersectionObserverMixin(LitElement) {
 
     function startTimer(timeLength, barWidth, progressBar, timer, maxTime) {
       var totalSeconds = timeLength;
-      var documentWidth =
-        document.documentElement.clientWidth * barWidth;
-      var surroundingBarWidth = document.documentElement.clientWidth * .5;
+      var documentWidth = document.documentElement.clientWidth * barWidth;
+      var surroundingBarWidth = document.documentElement.clientWidth * 0.5;
 
       var start = Date.now();
       var intervalSetted = null;
       const progressBarWidth = progressBar.offsetWidth;
       var greyBarWidth = (timeLength / maxTime) * surroundingBarWidth;
       greyBar.style.width = greyBarWidth + "px";
-
 
       function updateTimer() {
         var diff = (Date.now() - start) / 1000;
@@ -261,19 +259,15 @@ export class ProgressAnim extends IntersectionObserverMixin(LitElement) {
         var progressBarWidth = (diff / maxTime) * surroundingBarWidth;
         progressBar.style.width = progressBarWidth + "px";
 
-
-
         timer.innerHTML =
           seconds + "." + (tenths < 10 ? "0" + tenths : tenths) + "s";
       }
 
-      updateTimer();
-      intervalSetted = setInterval(updateTimer, 100);
+      intervalSetted = setInterval(updateTimer, window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 2000 : 100);
     }
 
     startTimer(timeLength, barWidth, progressBar, timer, maxTime);
   }
-
 
   updated(changedProperties) {
     changedProperties.forEach((oldValue, propName) => {
