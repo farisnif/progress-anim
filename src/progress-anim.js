@@ -243,6 +243,9 @@ export class ProgressAnim extends IntersectionObserverMixin(LitElement) {
       var greyBarWidth = (timeLength / maxTime) * surroundingBarWidth;
       greyBar.style.width = greyBarWidth + "px";
 
+      // set the transition property of the progress bar to create a smooth animation
+      progressBar.style.transition = "width 0.2s ease-in-out";
+
       function updateTimer() {
         var diff = (Date.now() - start) / 1000;
         if (diff >= timeLength) {
@@ -253,14 +256,18 @@ export class ProgressAnim extends IntersectionObserverMixin(LitElement) {
         var seconds = Math.floor(diff % 60);
         var tenths = Math.floor((diff % 1) * 100);
         var progressBarWidth = (diff / maxTime) * surroundingBarWidth;
+
+        // update the width of the progress bar using the style property
         progressBar.style.width = progressBarWidth + "px";
 
         timer.innerHTML =
           seconds + "." + (tenths < 10 ? "0" + tenths : tenths) + "s";
       }
 
-      intervalSetted = setInterval(updateTimer, window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 2000 : 100);
+      // update the progress bar every 50 milliseconds for a smoother animation
+      intervalSetted = setInterval(updateTimer, window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 2000 : 50);
     }
+
 
     startTimer(timeLength, barWidth, progressBar, timer, maxTime);
   }
