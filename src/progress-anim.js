@@ -49,10 +49,6 @@ export class ProgressAnim extends IntersectionObserverMixin(LitElement) {
       z-index: 5;
     }
 
-    /* #progress:focus {
-      outline: 2px solid black;
-    } */
-
     #timer {
       font-family: "Lucida Console", "Courier New", monospace;
       padding-right: 10px;
@@ -144,7 +140,7 @@ export class ProgressAnim extends IntersectionObserverMixin(LitElement) {
 
     @media (max-width: 700px) {
     #progress {
-      height: 20px; //was 28 tsting
+      height: 20px;
       border-radius: var(--progress-anim-bar-radius, 2px);
       border-radius: 1px;
       transition-width: 1s;
@@ -219,9 +215,6 @@ export class ProgressAnim extends IntersectionObserverMixin(LitElement) {
   constructor() {
     super();
     this.barTitle = "Rspack";
-    /* this.numberValue = "50000";
-    this.introTitle = "Blazing fast build speed";
-    this.description = "Combining TypeScript and Rust with a parallelized architecture to bring you the ultimate developer experience."; */
     this.timeLength = 5.79;
     this.maxTime = 60;
     this.barWidth = 0.075;
@@ -233,13 +226,10 @@ export class ProgressAnim extends IntersectionObserverMixin(LitElement) {
     var greyBar = this.shadowRoot.querySelector("#greyBar");
 
     function startTimer(timeLength, barWidth, progressBar, timer, maxTime) {
-      var totalSeconds = timeLength;
-      var documentWidth = document.documentElement.clientWidth * barWidth;
       var surroundingBarWidth = document.documentElement.clientWidth * 0.5;
 
       var start = Date.now();
       var intervalSetted = null;
-      const progressBarWidth = progressBar.offsetWidth;
       var greyBarWidth = (timeLength / maxTime) * surroundingBarWidth;
       greyBar.style.width = greyBarWidth + "px";
 
@@ -294,18 +284,6 @@ export class ProgressAnim extends IntersectionObserverMixin(LitElement) {
 
   render() {
     return html`
-    
-    <!-- FILLER TEXT TO TEST SCROLL FUNCTION -->
-    <!-- <div id="bruh">Joel Hans Embiid</div>
-    <div id="bruh">Joel Hans Embiid</div>
-    <div id="bruh">Joel Hans Embiid</div>
-
-
-    <div class="subfiller">
-      <div class="speedText">${this.introTitle}</div>
-      <div class="textDescription">${this.description}</div>
-    </div> -->
-
     <div class="progressArea">
       <div class="barTitle">${this.barTitle}</div>
     <div class="surroundingBar">
@@ -314,11 +292,6 @@ export class ProgressAnim extends IntersectionObserverMixin(LitElement) {
       <div id="timer"></div>
     </div>
 </div>
-
-    <!-- <div class="moduleCount">
-      <div class="moduleCountDefn">Module Count: </div>
-      <div class="moduleCountNumber">${this.numberValue}</div>
-    </div> -->
   `;
   }
 }
