@@ -56,7 +56,7 @@ export class ProgressAnim extends IntersectionObserverMixin(LitElement) {
       margin-left: auto;
     }
 
-    #bruh {
+    /* #bruh {
       margin: 0 auto;
       padding: 20px;
       padding-bottom: 400px;
@@ -68,21 +68,21 @@ export class ProgressAnim extends IntersectionObserverMixin(LitElement) {
 
     #bruh:hover {
       outline: 2px solid black;
-    }
+    } */
     
-    .speedText {
+    /* .speedText {
       margin-top: var(--progress-anim-header-padding-top, 20px);
       font-size: var(--progress-anim-header-size, 40px);
       font-weight: bold;
       text-align: center;
-    }
+    } */
 
-    .textDescription {
+    /* .textDescription {
       margin-top: var(--progress-anim-description-margin-top, 20px);
       margin-bottom: var(--progress-anim-description-margin-bottom, 20px);
       font-size: var(--progress-anim-description-font-size, 18px);
       text-align: center;
-    }
+    } */
 
     .surroundingBar {
       margin-top: 50px;
@@ -96,24 +96,24 @@ export class ProgressAnim extends IntersectionObserverMixin(LitElement) {
       margin: 0 auto;
     }
 
-    .moduleCount {
+    /* .moduleCount {
       font-size: 20px;
       margin-top: 20px;
       display: flex;
       align-items: center;
       justify-content: center;
-    }
+    } */
 
-    .moduleCountDefn {
+    /* .moduleCountDefn {
       margin-right: 2px;
       font-weight: var(--progress-anim-module-defn-boldness, lighter);
       color: var(--progress-anim-module-count-defn-font-color, grey);
-    }
+    } */
 
-    .moduleCountNumber {
+    /* .moduleCountNumber {
       font-weight: var(--progress-anim-module-count-number-boldness, bold);
       color: var(--progress-anim-module-count-number-font-color, #535353);
-    }
+    } */
 
     .progressArea {
       display: flex;
@@ -159,26 +159,26 @@ export class ProgressAnim extends IntersectionObserverMixin(LitElement) {
       padding-right: 2px;
     }   
 
-    .surroundingBar {
+    /* .surroundingBar {
       border-radius: 4px;
       padding: 2px;
       height: 20px;
-    }
+    } */
 
-    .moduleCount {
+    /* .moduleCount {
       font-size: 10px;
       margin-top: 10px;
       display: flex;
       align-items: center;
       justify-content: center;
-    }
+    } */
 
-    .barTitle {
+    /* .barTitle {
       font-size: 12px;
       color: grey;
       position: absolute;
       right: calc(77%);
-    }
+    } */
 
     #greyBar {
       position: relative;
@@ -190,7 +190,7 @@ export class ProgressAnim extends IntersectionObserverMixin(LitElement) {
       z-index: 2;
     }
 
-    .moduleCount {
+    /* .moduleCount {
       font-size: 20px;
       margin-top: 20px;
       display: flex;
@@ -207,7 +207,7 @@ export class ProgressAnim extends IntersectionObserverMixin(LitElement) {
     .moduleCountNumber {
       font-weight: var(--progress-anim-module-count-number-boldness, bold);
       color: var(--progress-anim-module-count-number-font-color, #535353);
-    }
+    } */
     `;
   }
 
@@ -234,7 +234,7 @@ export class ProgressAnim extends IntersectionObserverMixin(LitElement) {
       greyBar.style.width = greyBarWidth + "px";
 
       // set the transition property of the progress bar to create a smooth animation
-      progressBar.style.transition = "width 0.1s ease-in-out";
+      /* progressBar.style.transition = "width 0.1s ease-in-out"; */
 
       function updateTimer() {
         var diff = (Date.now() - start) / 1000;
@@ -259,7 +259,7 @@ export class ProgressAnim extends IntersectionObserverMixin(LitElement) {
       // check if the user prefers reduced motion
       var prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-      // update the progress bar every 100 milliseconds for a smoother animation
+      // update the progress bar every 10 milliseconds for a smoother animation
       intervalSetted = setInterval(updateTimer, prefersReducedMotion ? 2000 : 10);
     }
 
