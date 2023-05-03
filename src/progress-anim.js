@@ -270,19 +270,20 @@ export class ProgressAnim extends IntersectionObserverMixin(LitElement) {
 
   updated(changedProperties) {
     changedProperties.forEach((oldValue, propName) => {
-      if (
-        ["elementVisible"].includes(
-          propName
-        )
-      ) {
+      if (["elementVisible"].includes(propName)) {
         console.log(this.elementVisible);
         clearTimeout(this._debounce);
         this._debounce = setTimeout(() => {
-          this.progressAnim(this.timeLength, this.barWidth, this.maxTime);
+          if (this.elementVisible) {
+            this.progressAnim(this.timeLength, this.barWidth, this.maxTime);
+          } else {
+            this.progressBar.style.width = "0";
+          }
         }, 10);
       }
     });
   }
+
 
   render() {
     return html`
