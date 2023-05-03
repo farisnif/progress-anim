@@ -234,7 +234,7 @@ export class ProgressAnim extends IntersectionObserverMixin(LitElement) {
       greyBar.style.width = greyBarWidth + "px";
 
       // set the transition property of the progress bar to create a smooth animation
-      progressBar.style.transition = "width 0.4s ease-in-out";
+      progressBar.style.transition = "width 0.3s ease-in-out";
 
       function updateTimer() {
         var diff = (Date.now() - start) / 1000;
