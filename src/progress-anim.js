@@ -47,7 +47,7 @@ export class ProgressAnim extends IntersectionObserverMixin(LitElement) {
       direction: rtl;
       position: absolute;
       z-index: 5;
-      transition: width 0.1s ease-in-out;
+      transition: width 0.01s ease-in-out;
     }
 
     #timer {
@@ -121,6 +121,13 @@ export class ProgressAnim extends IntersectionObserverMixin(LitElement) {
       border-radius: 2px;
       z-index: 2;
     }
+
+    .barTitle {
+    font-size: 12px;
+    color: grey;
+    position: absolute;
+    right: calc(80%);
+  }
     `;
   }
 
