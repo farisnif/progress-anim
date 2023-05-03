@@ -107,9 +107,9 @@ export class AppsRoster extends LitElement {
     return html`
         <div class="wrapper">
          <!-- DROPPED FROM PROGRESS-ANIM.js FILLER TEXT TO TEST SCROLL FUNCTION -->
-        <div id="bruh">Joel Hans Embiid</div>
-        <div id="bruh">Joel Hans Embiid</div>
-        <div id="bruh">Joel Hans Embiid</div>
+        <div id="bruh">Joel "MVPiid" Embiid</div>
+        <div id="bruh">Joel "MVPiid" Embiid</div>
+        <div id="bruh">Joel "MVPiid" Embiid</div>
 
 
         <div class="subfiller">

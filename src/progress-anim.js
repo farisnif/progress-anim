@@ -59,7 +59,7 @@ export class ProgressAnim extends IntersectionObserverMixin(LitElement) {
     .surroundingBar {
       margin-top: 50px;
       padding: 4px;
-      border: 1px solid #c6c5c9;
+      border: var(--progress-anim-surrounding-bar-border-color-font, 1px solid #c6c5c9);
       border-radius: 10px;
       width: 50%;
       display: flex;
@@ -87,7 +87,7 @@ export class ProgressAnim extends IntersectionObserverMixin(LitElement) {
       position: relative;
       width: 30%;
       height: 50px;
-      background-color: #ccc;
+      background-color: var(--progress-anim-filler-background-color, #ccc);
       border-radius: 6px;
       z-index: 2
     }
@@ -116,7 +116,7 @@ export class ProgressAnim extends IntersectionObserverMixin(LitElement) {
       position: relative;
       width: 30%;
       height: 20px;
-      background-color: #ccc;
+      background-color: var(--progress-anim-filler-background-color, #ccc);
       border-top-left-radius: 0;
       border-radius: 2px;
       z-index: 2;
