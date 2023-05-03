@@ -41,7 +41,7 @@ export class ProgressAnim extends IntersectionObserverMixin(LitElement) {
   static get styles() {
     return css`
       #progress {
-      background: var(--progress-anim-bar-color, linear-gradient(to right, #9dad6b, #ffa500));
+      background: var(--progress-anim-bar-color, linear-gradient(to right,#d3c357,#f1a76a,#cc6d2e));
       height: var(--progress-anim-bar-height, 50px);
       border-radius: var(--progress-anim-bar-radius, 6px);
       direction: rtl;
