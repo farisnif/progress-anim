@@ -129,7 +129,7 @@ export class ProgressAnim extends IntersectionObserverMixin(LitElement) {
     font-size: 16px;
     color: grey;
     position: absolute;
-    right: calc(100% - 10%);
+    right: calc(80%);
   }
 
 
