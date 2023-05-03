@@ -47,6 +47,7 @@ export class ProgressAnim extends IntersectionObserverMixin(LitElement) {
       direction: rtl;
       position: absolute;
       z-index: 5;
+      transition: width 0.1s ease-in-out;
     }
 
     #timer {
@@ -143,7 +144,6 @@ export class ProgressAnim extends IntersectionObserverMixin(LitElement) {
       height: 20px;
       border-radius: var(--progress-anim-bar-radius, 2px);
       border-radius: 1px;
-      transition-width: 1s;
       z-index: 5;
     }
 
@@ -234,7 +234,7 @@ export class ProgressAnim extends IntersectionObserverMixin(LitElement) {
       greyBar.style.width = greyBarWidth + "px";
 
       // set the transition property of the progress bar to create a smooth animation
-      progressBar.style.transition = "width 0.3s ease-in-out";
+      progressBar.style.transition = "width 0.1s ease-in-out";
 
       function updateTimer() {
         var diff = (Date.now() - start) / 1000;
@@ -248,6 +248,8 @@ export class ProgressAnim extends IntersectionObserverMixin(LitElement) {
         var progressBarWidth = (diff / maxTime) * surroundingBarWidth;
 
         // update the width of the progress bar using the style property
+        /* progressBar.style.transition = "width 0.1s ease-in-out"; */
+
         progressBar.style.width = progressBarWidth + "px";
 
         timer.innerHTML =
